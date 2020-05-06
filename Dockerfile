@@ -16,4 +16,4 @@ RUN git clone https://github.com/vladimir-tutin/Plex-Auto-Collections.git /app \
 VOLUME /config
 
 # Run script.
-CMD ["python", "plex_auto_collections.py", "--update", "> /config/logs/log.txt"]
+ENTRYPOINT exec python plex_auto_collections.py --update > /config/logs/log.txt 2>&1
